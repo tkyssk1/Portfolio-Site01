@@ -1,0 +1,112 @@
+@media (max-width: 768px) {
+    .section-wrapper {
+        /* 全画面表示に横のスペースを入れる */
+        padding: 100px 4% 40px;
+    }
+    /* ------------------------------- */
+    /* header
+    /* ------------------------------- */
+    .header {
+        padding-top: 30px;
+    }
+    /* モーダルページ */
+    .header-nav {
+        /* ハンバーガーボタンを押下したときに表示 */
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: #282F35;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .nav-item {
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
+    .nav-item:last-child {
+        margin-bottom: 0px;
+    }
+    /* //モーダルページ */
+    .burger-btn {
+        display: block;
+        width: 39px;
+        height: 39px;
+        position: relative;
+        z-index: 2;
+        border: none;
+        cursor: pointer;
+    }
+    /* ハンバーガーボタンのバー */
+    .bar {
+        width: 20px;
+        height: 1px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: transform .3s;
+        background-color: #fff;
+    }
+    .bar-top {
+        top: 10px;
+    }
+    .bar-mid {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .bar-bottom {
+        bottom: 10px;
+    }
+    /* ハンバーガーボタン押下時に×印に変更 */
+    .burger-btn.close .bar-top {
+        /*  */
+        transform: translate(-50%, 10px) rotate(45deg);
+        transition: transform .3s;
+    }
+    .burger-btn.close .bar-mid {
+        opacity: 0;
+        transition: opacity .3s;
+    }
+    .burger-btn.close .bar-bottom {
+        transform: translate(-50%, -8px) rotate(-45deg);
+        transition: transform .3s;
+    }
+    /* ------------------------------- */
+    /* form
+    /* ------------------------------- */
+    .main-copy {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* 改行禁止 */
+        text-align: center;
+    }
+    .page-title {
+        /* vw: 375, px: 30の比率 */
+        font-size: 8.0vw;
+        font-style: italic;
+    }
+    .page-title-bottom {
+        /* vw: 375, px: 30の比率 */
+        font-size: 10.6vw;
+        font-style: italic;
+    }
+    .checkbox-item {
+        display: block;
+    }
+    .contact-text {
+        margin-bottom: 15px;
+    }
+    .checkbox-item-child {
+        margin-bottom: 5px;
+    }
+}

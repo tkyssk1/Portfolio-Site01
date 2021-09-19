@@ -1,0 +1,294 @@
+@charset "UTF-8";
+/* ------------------------------- */
+
+/* 共通部分
+/* ------------------------------- */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  letter-spacing: .05em;
+  color: #171717;
+  font-family: 'Noto Serif', 'Noto Serif JP', serif;
+}
+
+/* ハンバーガーボタン押下時に画面固定 */
+
+.noscroll {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  /* 元の画像より大きくなることもある */
+  width: 100%;
+  /* 画像の下の隙間を解消 */
+  vertical-align: bottom;
+}
+
+/* //共通部分 */
+
+/* 本ページ共通 */
+
+.right-position {
+  text-align: right;
+}
+
+.white-font {
+  color: #FFFFFF;
+}
+
+.white-font::after {
+  background-color: #FFFFFF;
+}
+
+/* ------------------------------- */
+
+/* header
+/* ------------------------------- */
+
+.header {
+  padding: 19px 4%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: bold;
+  font-style: italic;
+  color: #FFFFFF;
+  transition: .3s;
+}
+
+/* ヘッダーがfvを超えたときに固定にする */
+
+.header.fixed {
+  position: fixed;
+  background-color: #282F35;
+  padding: 30px;
+  width: 100%;
+  transition: .3s;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* クリスタの動画通り、比率ではなく1200pxで揃える */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-inner a {
+  transition: .3s;
+}
+
+.header-inner a:hover {
+  opacity: .7;
+  transition: .3s;
+}
+
+.site-title {
+  font-size: 2.6rem;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 30px;
+}
+
+.nav-item:last-child {
+  margin-right: 0px;
+}
+
+.burger-btn {
+  display: none;
+}
+
+/* ------------------------------- */
+
+/* page-title
+/* ------------------------------- */
+
+.page-title-wrapper {
+  padding: 0px 4%;
+}
+
+.section-title {
+  max-width: 1200px;
+  font-size: 6rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #282F35;
+  margin: 0 auto 80px;
+  padding-left: 100px;
+}
+
+.page-title-bg {
+  background-image: url(../img/contact-bgi@2x.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* 最小の高さを指定 */
+  height: 453px;
+  position: relative;
+}
+
+.main-copy {
+  position: absolute;
+  color: #FFFFFF;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page-title {
+  font-size: 6.0rem;
+  font-style: italic;
+}
+
+.page-title-bottom {
+  position: absolute;
+  max-width: 1200px;
+  font-size: 9rem;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.05;
+  bottom: 40px;
+}
+
+/* ------------------------------- */
+
+/* Form
+/* ------------------------------- */
+
+.form-wrapper {
+  margin: 97px auto 80px;
+  max-width: 700px;
+}
+/* max-width700の横幅4%分、28px×2より狭まったら余白を持たせる */
+@media (max-width: 756px) {
+  .form-wrapper {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
+
+.contact-text {
+  margin-bottom: 5px;
+}
+
+.input-item {
+  margin-bottom: 22px;
+}
+
+.input-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.checkbox-item {
+  margin-bottom: 22px;
+  display: flex;
+}
+
+.checkbox-item-child {
+  margin-right: 20px;
+}
+
+.input-item label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type=checkbox] {
+  appearance: none;
+  border: solid 1px #282F35;
+  height: 10px;
+  width: 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+input[type=checkbox]:checked {
+  background-color: #000;
+}
+
+input[type=text], input[type=email], textarea {
+  display: block;
+  /* 背景白なので以下不要 */
+  /* background-color: rgba(255,255,255,.5); */
+  border: 1px#141414 solid;
+  border-radius: 1px;
+  font-size: 1.6rem;
+  width: 100%;
+  max-width: 700px;
+  padding: 0 8px;
+  height: 30px;
+  line-height: 30px;
+  /* 線を幅に含める */
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  max-width: 700px;
+  height: 171px;
+}
+
+.form-btn {
+  background-color: #F7D43F;
+  color: #171717;
+  display: block;
+  margin: 80px auto 0px;
+  text-align: center;
+  box-shadow: 0 0 6px #1B1310;
+  width: 235px;
+  height: 59px;
+  line-height: 59px;
+  border-radius: 30px;
+  font-weight: bold;
+  /* マウスアウト時(hoverじゃないときに適用) */
+  transition: 3s;
+}
+
+.form-btn:hover {
+  opacity: .7;
+  /* マウスオーバー時 */
+  transition: 3s;
+}
+
+/* ------------------------------- */
+
+/* footer
+/* ------------------------------- */
+
+footer {
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  /* 水平方向の中央寄せ */
+  justify-content: center;
+  /* 垂直方向の中央寄せ */
+  align-items: center;
+}
+
+small {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #282F35;
+}
+
+/* ------------------------------- */
+
+/* responsiveは別ファイル
+/* ------------------------------- */

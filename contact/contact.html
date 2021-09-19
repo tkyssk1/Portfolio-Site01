@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cresta Design | Contact</title>
+  <!-- css -->
+  <link href="../css/reset.css" rel="stylesheet">
+  <link href="../css/contact.css" rel="stylesheet">
+  <link href="../css/contact_responsive.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- slick -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="site-title"><a href="../">Cresta Design</a></h1>
+      <nav class="header-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#!">Concept</a></li>
+          <li class="nav-item"><a href="#!">Service</a></li>
+          <li class="nav-item"><a href="#!">Works</a></li>
+          <!-- 今回はContactページを作成する -->
+          <li class="nav-item"><a href="./contact.html">contact</a></li>
+        </ul>
+      </nav>
+      <!-- ハンバーガーメニュー -->
+      <button class="burger-btn">
+        <span class="bar bar-top"></span>
+        <span class="bar bar-mid"></span>
+        <span class="bar bar-bottom"></span>
+      </button>
+    </div>
+  </header>
+  <!-- //header -->
+
+  <!-- main -->
+
+  <main>
+    <!-- page-title -->
+    <div class="page-title-wrapper page-title-bg">
+      <div class="main-copy">
+        <p class="page-title">Contact</p>
+      </div>
+      <div class="page-title-bottom white-font">Contact us</div>
+    </div>
+    <!-- //page-title -->
+
+    <!-- Form -->
+    <section class="form-wrapper">
+      <form action="" name="contact-form">
+        <p class="contact-text">お問い合わせ内容</p>
+        <ul class="checkbox-item">
+          <li class="checkbox-item-child">
+            <label>
+              <input type="checkbox" class="checkbox" name="category">
+              資料請求</label>
+          </li>
+          <li class="checkbox-item-child">
+            <label>
+              <input type="checkbox" class="checkbox" name="category">
+              お電話でのご相談を希望　</label>
+          </li>
+          <li class="checkbox-item-child">
+            <label>
+              <input type="checkbox" class="checkbox" name="category">
+              申し込み</label>
+          </li>
+        </ul>
+        <div class="input-item">
+          <!-- for属性とid属性は揃える -->
+          <label for="name">担当者名</label>
+          <input type="text" class="input-text" id="name" name="your-name">
+        </div>
+        <div class="input-item">
+          <label for="tel">電話番号</label>
+          <input type="text" class="input-text" id="tel" name="your-tel">
+        </div>
+        <div class="input-item">
+          <label for="email">メールアドレス</label>
+          <input type="email" class="input-text" id="email" name="your-email">
+        </div>
+        <div class="input-item">
+          <label for="comment">その他</label>
+          <textarea id="comment" name="your-comment"></textarea>
+        </div>
+        <input type="submit" class="form-btn" value="submit">
+      </form>
+    </section>
+    <!-- //Form -->
+  </main>
+  <!-- //main -->
+
+  <!-- footer -->
+  <footer>
+    <small>&copy;cresta.design all rights reserved</small>
+  </footer>
+  <!-- //footer -->
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../js/script.js"></script>
+
+</html>

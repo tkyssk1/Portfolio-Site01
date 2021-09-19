@@ -1,0 +1,382 @@
+@charset "UTF-8";
+/* ------------------------------- */
+
+/* 共通部分
+/* ------------------------------- */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  letter-spacing: .05em;
+  color: #171717;
+  font-family: 'Noto Serif', 'Noto Serif JP', serif;
+}
+/* ハンバーガーボタン押下時に画面固定 */
+.noscroll {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  /* 元の画像より大きくなることもある */
+  width: 100%;
+  /* 画像の下の隙間を解消 */
+  vertical-align: bottom;
+}
+
+/* //共通部分 */
+
+/* 本ページ共通 */
+
+.section-wrapper {
+  /* 全画面表示に横のスペースを入れる */
+  padding: 100px 4% 70px;
+}
+
+.section-title {
+  max-width: 1200px;
+  font-size: 6rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #282F35;
+  margin: 0 auto 80px;
+  padding-left: 100px;
+}
+
+.section-title::after {
+  content: "";
+  display: inline-block;
+  background-color: #282F35;
+  width: 200px;
+  height: 5px;
+  margin-left: 30px;
+  vertical-align: middle;
+}
+
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-bottom {
+  max-width: 1200px;
+  font-size: 9rem;
+  font-weight: bold;
+  color: #171717;
+  opacity: 0.05;
+  margin: 70px auto 0;
+}
+
+.right-position {
+  text-align: right;
+}
+
+.white-font {
+  color: #FFFFFF;
+}
+
+.white-font::after {
+  background-color: #FFFFFF;
+}
+
+.link-btn {
+  background-color: #F7D43F;
+  color: #171717;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 6px #1B1310;
+  width: 235px;
+  height: 59px;
+  line-height: 59px;
+  border-radius: 30px;
+  font-weight: bold;
+  /* マウスアウト時(hoverじゃないときに適用) */
+  transition: 3s;
+}
+
+.link-btn:hover {
+  opacity: .7;
+  /* マウスオーバー時 */
+  transition: 3s;
+}
+
+/* ------------------------------- */
+
+/* header
+/* ------------------------------- */
+
+.header {
+  padding: 19px 4%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: bold;
+  font-style: italic;
+  color: #FFFFFF;
+  transition: .3s;
+}
+
+/* ヘッダーがfvを超えたときに固定にする */
+.header.fixed{
+  position: fixed;
+  background-color: #282F35;
+  padding: 30px;
+  width: 100%;
+  transition: .3s;
+}
+.header-nav{
+  display: block;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* クリスタの動画通り、比率ではなく1200pxで揃える */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-inner a {
+  transition: .3s;
+}
+
+.header-inner a:hover {
+  opacity: .7;
+  transition: .3s;
+}
+
+.site-title {
+  font-size: 2.6rem;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 30px;
+}
+
+.nav-item:last-child {
+  margin-right: 0px;
+}
+
+.burger-btn {
+  display: none;
+}
+
+/* ------------------------------- */
+
+/* first view
+/* ------------------------------- */
+
+.fv {
+  /* sliderを使うため、URLはHTMLで記載 */
+  /* background-image: url(../img/fv-b1@2x.jpg); gi_0*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  /* 最小の高さを指定 */
+  min-height: 550px;
+  position: relative;
+}
+.fv img{
+  height: 100vh;
+  min-height: 550px;
+  object-fit: cover;
+}
+.main-copy {
+  position: absolute;
+  color: #FFFFFF;
+  left: 120px;
+  bottom: 177px;
+  font-weight: bold;
+  padding-left: 4%;
+}
+
+.en-copy {
+  font-size: 7.0rem;
+  margin-bottom: 31px;
+}
+
+.jp-copy {
+  font-size: 4.0rem;
+  text-align: center;
+}
+
+.slick-arrow{
+  display: none !important;
+}
+.sp-br{
+  display: none;
+}
+/* ------------------------------- */
+
+/* concept
+/* ------------------------------- */
+
+.concept-lead {
+  text-align: center;
+  font-size: 3.0rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  line-height: 1.66;
+}
+
+.concept-content {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+}
+
+.concept-text {
+  max-width: 440px;
+  line-height: 1.875;
+  font-weight: bold;
+}
+
+.concept-img-wrapper {
+  max-width: 440px;
+  /* 親要素concept-content1000pxに対してのmargin */
+  margin-left: 12%;
+}
+
+/* ------------------------------- */
+
+/* works
+/* ------------------------------- */
+
+.bg-works {
+  background-image: url(../img/works-bgi@2x.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.works-list {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  justify-content: space-between;
+}
+
+.works-item {
+  max-width: 32%;
+  background-color: #FFFFFF;
+}
+
+.works-items a {
+  color: #141414;
+}
+
+.works-list-text {
+  padding: 25px 20px;
+  line-height: 1.875;
+}
+
+/* ------------------------------- */
+
+/* service
+/* ------------------------------- */
+
+.service-list {
+  display: flex;
+  /* 親要素のpaddingを無効にする */
+  /* https://qiita.com/2x2no/items/12d0d87b38b19d1a28af */
+  /* margin-left: calc(((100vw - 100%) / 2) * -1); */
+  /* margin-right: calc(((100vw - 100%) / 2) * -1); */
+}
+
+.service-item {
+  width: 33.3%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.service-item.service_1 {
+  background-image: url(../img/service-img01@2x.jpg);
+}
+
+.service-item.service_2 {
+  background-image: url(../img/service-img02@2x.jpg);
+}
+
+.service-item.service_3 {
+  background-image: url(../img/service-img03@2x.jpg);
+}
+
+.service-item a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 320px;
+  font-size: 4.0rem;
+  font-style: italic;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.service-item a:hover {
+  background-color: rgba(40, 47, 53, .7);
+  transition: .3s;
+}
+
+/* ------------------------------- */
+
+/* contact
+/* ------------------------------- */
+
+.bg-contact {
+  background-image: url(../img/contact-bgi@2x.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-text {
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ------------------------------- */
+
+/* footer
+/* ------------------------------- */
+
+footer {
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  /* Flexboxを指定 */
+  justify-content: center;
+  /* 水平方向の中央寄せ */
+  align-items: center;
+  /* 垂直方向の中央寄せ */
+}
+
+small {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #282F35; 
+}
+
+/* ------------------------------- */
+
+/* responsiveは別ファイル
+/* ------------------------------- */
