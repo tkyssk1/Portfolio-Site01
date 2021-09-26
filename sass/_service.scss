@@ -1,0 +1,63 @@
+@use "variable" as v;
+@use "mixins" as m;
+
+/* ------------------------------- */
+/* service
+/* ------------------------------- */
+
+// seviceセクションのみ画像を横幅いっぱいに表示
+.section-wrapper{
+  &.service-top {
+    @include m.media{
+      padding-bottom: 0;
+    }
+  }
+  &.service-bottom {
+    @include m.media{
+      padding-top: 0;
+    }
+  }
+}
+
+.service-list {
+  display: flex;
+  /* 親要素のpaddingを無効にする */
+  /* https://qiita.com/2x2no/items/12d0d87b38b19d1a28af */
+  /* margin-left: calc(((100vw - 100%) / 2) * -1); */
+  /* margin-right: calc(((100vw - 100%) / 2) * -1); */
+  @include m.media{
+    display: block;
+  }
+}
+
+.service-item {
+  width: 33.3%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @for $i from 1 through 3 {
+    &.service_#{$i} {
+      background-image: url(../img/service-img0#{$i}@2x.jpg);
+    }
+  }
+  @include m.media {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 320px;
+    @include m.baseFont(4rem, italic, bold, #fff);
+    transition: 0.3s;
+    &:hover {
+      background-color: rgba(40, 47, 53, 0.7);
+      transition: 0.3s;
+    }
+    @include m.media{
+      line-height: 250px;
+      font-size: 5.33vw;
+    }
+  }
+}
