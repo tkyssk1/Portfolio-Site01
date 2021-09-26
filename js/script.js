@@ -17,6 +17,11 @@ jQuery(function ($) {
         if (win.width() > 768) {
             // header-navは改めて表示
             $('.header-nav').fadeIn();
+            // 画面サイズを変更した場合は、レスポンシブ時に反映されていたclassを除去
+            header.removeClass("fixed");
+            $('body').removeClass("noscroll")
+            $('.burger-btn').removeClass('close');
+            // スクロールがfvエリアに来た場合
             if (fvPosi < scr) {
                 header.addClass("fixed");
             } else {
@@ -33,6 +38,11 @@ jQuery(function ($) {
             //     easing: "swing" // エフェクトのイージングをlinear,swingから指定
             // });
         }
+        // スマホ画像になり、ハンバーガーボタンが押下されていない(closeクラスがない)場合
+        if (win.width() < 768 && !$('.burger-btn').hasClass('close')) {
+            $('.header-nav').fadeOut();
+        }
+
     })
     // スライダー
     $(".slider").slick({
@@ -41,6 +51,7 @@ jQuery(function ($) {
         speed: 1000,
         fade: true,
         cssEase: "linear",
+        // 切り替わらないときがあったので、以下を追加
         pauseOnFocus: false,
         pauseOnHover: false,
         pauseOnDotsHover: false
@@ -58,7 +69,7 @@ jQuery(function ($) {
         $('.header-nav').on("click", function () {
             $('.header-nav').fadeToggle();
             $('body').toggleClass('noscroll');
-            $('.burger-btn').toggleClass('close');    
+            $('.burger-btn').toggleClass('close');
         });
     }
 });
