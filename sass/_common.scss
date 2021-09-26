@@ -1,0 +1,84 @@
+@use "variable" as v;
+@use "mixins" as m;
+/* ------------------------------- */
+/* 本サイト共通
+/* ------------------------------- */
+.section-wrapper {
+  /* 全画面表示に横のスペースを入れる */
+  padding: 100px 4% 70px;
+  @include m.media() {
+    /* 全画面表示に横のスペースを入れる */
+    padding: 100px 4% 40px;
+  }
+}
+
+.section-title {
+  max-width: 1200px;
+  @include m.baseFont(6rem, italic, bold, #282f35);
+  margin: 0 auto 80px;
+  padding-left: 100px;
+  &::after {
+    content: "";
+    display: inline-block;
+    background-color: #282f35;
+    width: 200px;
+    height: 5px;
+    margin-left: 30px;
+    vertical-align: middle;
+  }
+  @include m.media() {
+    font-size: 3rem;
+    padding-left: 0;
+    margin-bottom: 50px;
+    &:after {
+      width: 90px;
+    }
+  }
+}
+
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-bottom {
+  max-width: 1200px;
+  @include m.baseFont(9rem,normal,bold,#171717);
+  opacity: 0.05;
+  margin: 70px auto 0;
+  @include m.media() {
+    font-size: 4rem;
+    margin-top: 40px;
+  }
+}
+.sp-br {
+  display: none;
+  @include m.media() {   
+    display: block;
+  }
+}
+.pc-br{
+  @include m.media() {   
+    display: none;
+  }
+}
+
+.right-position {
+  text-align: right;
+}
+
+.white-font {
+  color: #ffffff;
+  &::after {
+    background-color: #ffffff;
+  }
+}
+
+.link-btn {
+  @include m.baseBtn(#f7d43f);
+  &:hover {
+    opacity: 0.7;
+    /* マウスオーバー時 */
+    transition: 3s;
+  }
+}
