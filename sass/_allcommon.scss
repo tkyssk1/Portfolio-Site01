@@ -1,0 +1,30 @@
+@use "variable" as v;
+/* ------------------------------- */
+/* 共通部分
+/* ------------------------------- */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: v.$font-color-default;
+    font-family: "Noto Serif", "Noto Serif JP", serif;
+}
+/* ハンバーガーボタン押下時に画面固定 */
+.noscroll {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    /* 元の画像より大きくなることもある */
+    width: 100%;
+    /* 画像の下の隙間を解消 */
+    vertical-align: bottom;
+}

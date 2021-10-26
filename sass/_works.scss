@@ -1,0 +1,53 @@
+@use "variable" as v;
+@use "mixins" as m;
+/* ------------------------------- */
+/* works
+/* ------------------------------- */
+
+.bg-works {
+  background-image: url(../img/works-bgi@2x.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.works-list {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  justify-content: space-between;
+  @include m.media {
+    display: block;
+    margin-bottom: 80px;
+  }
+}
+
+.works-item {
+  max-width: 32%;
+  background-color: #ffffff;
+  @include m.media {
+    max-width: 320px;
+    margin: {
+      top: 0;
+      right: auto;
+      left: auto;
+      bottom: 30px;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+.works-list-img {
+  @include m.media {
+  width: 100%;
+  }
+}
+
+.works-items a {
+  color: #141414;
+}
+
+.works-list-text {
+  padding: 25px 20px;
+  line-height: 1.875;
+}
