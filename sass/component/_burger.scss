@@ -1,0 +1,77 @@
+// component/_button.scss
+@use "../global" as g;
+
+// ハンバーガーボタン押下時に画面固定
+.noscroll {
+    overflow: hidden;
+}
+// ハンバーガーボタン押下時に背景を灰色に
+.bg-cover {
+    display: none;
+    position: fixed; /* ブラウザの定位置に固定 */
+    background-color: rgba($color: #222222, $alpha: 0.6); /* 背景色を半透明の黒色に */
+    width: 100%; /* 要素の横幅を画面全体に */
+    height: 100%; /* 要素の高さを画面全体に */
+    top: 0; /* 要素の固定位置をブラウザ最上部に合わせる */
+    left: 0; /* 要素の固定位置をブラウザ左側に合わせる */
+    z-index: 15; /* 要素をコンテンツより前面に（要調整） */
+    transition: 0.3s;
+}
+
+//ハンバーガーボタン押下時にサイドバー表示
+.side-bar {
+    // ハンバーガーボタン押下時に表示
+    z-index: 20;
+    width: 36.1%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: 0.3s;
+    background-color: rgba(34, 34, 34, 0.95);
+    @include g.baseFont(2rem, normal, 800, #fff);
+    letter-spacing: g.$title-ls;
+    @include g.mediaTB{
+        width: 60%;
+        font-size: 1.8rem;
+    }
+    @include g.mediaSP{
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    .side-bar-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .symbol-wrapper {
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
+    .header-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .nav-item {
+            text-align: center;
+            margin-bottom: 30px;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+//サイドバー用クラス
+.side-bar.open {
+    transform: translateX(0%);
+    opacity: 1;
+}

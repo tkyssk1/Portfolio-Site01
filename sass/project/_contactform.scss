@@ -1,0 +1,71 @@
+@use "../global" as g;
+
+.form-wrapper {
+    margin-top: 52px;
+    .form-list {
+        .form-item {
+            width: 100%;
+            margin-bottom: 40px;
+            .form-label {
+                display: block;
+                @include g.baseFont(1.6rem, normal, 400, #333333);
+                margin-bottom: 10px;
+                &.required::after {
+                    content: "必須";
+                    background-color: #000;
+                    @include g.baseFont(1.2rem, normal, 400, #fff);
+                    padding: 1px 5px;
+                    margin-left: 25px;
+                }
+                @include g.mediaSP{
+                    font-weight: bold;
+
+                }
+            }
+            //問い合わせ種別
+            .category-list {
+                display: flex;
+                @include g.mediaSP{
+                    flex-direction: column;
+                }
+                .category-item {
+                    margin-right: 50px;
+                    &:last-of-type {
+                        margin-right: 0px;
+                    }
+                    @include g.mediaSP{
+                        margin-bottom: 15px;
+                        margin-left: 10px; 
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }    
+                }
+            }
+            //Privacy Policy
+            .policy-title {
+                @include g.baseFont(1.6rem, normal, 800, #333333);
+                letter-spacing: 0.004em;
+                margin-bottom: 10px;
+            }
+            .scroll-box {
+                max-width: 700px;
+                height: 252px;
+                padding: 10px 10px 10px;
+                border: 1px solid #000;
+                overflow-y: scroll;
+                margin-bottom: 40px;
+            }
+            .policy-check {
+                text-align: center;
+                margin-bottom: 40px;
+                .policy-label{
+                    font-size: 1.4rem;
+                    // 見た目で文字間隔修正
+                    letter-spacing: -0.05em;
+                }
+            }
+        }
+    }
+    // radioボタン
+}

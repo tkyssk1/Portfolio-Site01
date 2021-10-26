@@ -1,0 +1,30 @@
+@use "../global" as g;
+
+.event-list {
+    max-width: 700px;
+}
+
+.event-item {
+    border-bottom: 1px #ddd solid;
+    margin-bottom: 30px;
+    .event-date {
+        @include g.baseFont(1rem, normal, bold, #cecece);
+        margin-bottom: 10px;
+        letter-spacing: 0.015em;
+        @include g.mediaSP{
+            font-size: 1.0rem;
+        }
+    }
+    .event-content {
+        @include g.baseFont(1.4rem, normal, bold, #000);
+        margin-bottom: 10px;
+        letter-spacing: 0.004em;
+        @include g.mediaSP{
+            font-size: 1.2rem;
+        }
+    }
+    &:last-of-type {
+        border-bottom: none;
+        // margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,86 @@
+// component/_element.scss
+//this file is composed of button, checkbox, radio button...
+@use "../global" as g;
+
+.link-btn{
+    @include g.baseFont(1.2rem, normal, bold, #fff);
+    background-color: #000;
+    display: block;
+    width: 160px;
+    line-height: 36px;
+    letter-spacing: 0.015em;
+    text-align: center;
+}
+
+// ラジオボタン(ディスプレイ表示させない設定は_base.sassの.visually-hiddenに記載)
+// https://itokoba.com/archives/768
+.radio-type01 + label{
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: max-content;
+    &::before{
+        content: "";
+        display: block; 
+        background-color: #fff;
+        border: 1px solid #333333;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    &::after{
+        content: "";
+        display: block; 
+        position: absolute;
+        background-color: #333333;
+        border-radius: 50%;
+        opacity: 0;
+        width: 12px;
+        height: 12px;
+        // {before(20px) - after(12px)} / 2
+        left: 4px;
+        transition: .3s;
+    }
+}
+.radio-type01:checked + label::after{
+    opacity: 1;
+}
+
+// チェックボックス(ディスプレイ表示させない設定は_base.sassの.visually-hiddenに記載)
+// https://itokoba.com/archives/768
+.checkbox01 + label{
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    // コンテンツの幅と等しくする
+    width: max-content;
+    &::before{
+        content: "";
+        display: block; 
+        background-color: #fff;
+        border: 1px solid #333333;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    &::after{
+        content: "";
+        display: block; 
+        position: absolute;
+        opacity: 0;
+        border-right: 2px solid #333; 
+        border-bottom: 2px solid #333; 
+        width: 6px;
+        height: 12px;
+        top: 3px;
+        left: 7px;
+        transition: .3s;
+        transform: rotate(45deg); 
+    }
+}
+.checkbox01:checked + label::after{
+    opacity: 1;
+}

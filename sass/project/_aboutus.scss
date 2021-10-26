@@ -1,0 +1,39 @@
+@use "../global" as g;
+
+.about-bg {
+    width: 100%;
+    @include g.imageRetina(about-img);
+    padding: 110px 80px 110px 80px;
+    @include g.mediaTB{
+        padding: 60px 7.8%; 
+    }
+    @include g.mediaSP{
+        padding: 50px 15px;
+    }
+}
+.about-content{
+    max-width: 590px;
+    height: auto;
+    background-color: #fff;
+    padding: 50px 30px;
+    @include g.mediaTB{
+        max-width: 590px; 
+    }
+    @include g.mediaSP{
+        padding: 50px 15px 50px 30px;
+    }
+    .concept-text{
+        @include g.baseFont(1.6rem, normal, 400, #000);
+        line-height: 2.0;
+        //AdobeXDから見た目で微調整
+        letter-spacing: -0.56px;
+        font-family: 'Noto Sans JP', sans-serif;
+        margin-bottom: 60px;
+        @include g.mediaTB{
+            margin-bottom: 30px;
+        }
+        @include g.mediaTB{
+            font-size: 1.4rem;
+        }
+    }
+}

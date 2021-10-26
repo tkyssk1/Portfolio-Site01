@@ -1,0 +1,68 @@
+// global/_mixins.scss
+@use "variables" as var;
+
+// Retina対応
+@mixin imageRetina($imagePath: 01, $position: center) {
+    // インターポーレーション#{ }を使う
+    background: {
+        image: url(../images/#{$imagePath}.png);
+        image: image-set(url(../images/#{$imagePath}.png) 1x, url(../images/#{$imagePath}@2x.png) 2x);
+        repeat: no-repeat;
+        size: cover;
+        position: $position;
+    }
+}
+
+// タブレット用
+@mixin mediaTB($maxWidthMedia: 768px) {
+    @media (max-width: $maxWidthMedia) {
+        & {
+            @content;
+        }
+    }
+}
+@mixin mediaSP($maxWidthMedia: 375px) {
+    @media (max-width: $maxWidthMedia) {
+        & {
+            @content;
+        }
+    }
+}
+
+
+// 文字のスタイル
+@mixin baseFont($size: 1.6rem, $style: normal, $weight: bold, $color: #fff) {
+    font: {
+        size: $size;
+        style: $style;
+        weight: $weight;
+    }
+    color: $color;
+}
+
+//flexのテンプレート
+@mixin tmpFlex($justify-content: space-between, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    @include mediaTB(){
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+//contentのテンプレート
+@mixin tmpContent{
+    max-width: 47.3%;
+    height: auto;
+    .concept-text{
+        @include baseFont(1.6rem, normal, 400, #000);
+        line-height: 76px;
+        //AdobeXDから見た目で微調整
+        letter-spacing: -0.56px;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    @include mediaTB(){
+        max-width: 520px;
+    }
+}

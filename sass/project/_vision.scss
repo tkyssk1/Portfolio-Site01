@@ -1,0 +1,9 @@
+@use "../global" as g;
+
+.vision-content {
+    padding-left: 20.5%;
+    @include g.mediaSP{
+        padding-left: 0;
+    }
+
+}

@@ -1,0 +1,30 @@
+@use "../global" as g;
+
+.contact-message{
+    max-width: 41%;
+    // width: 40.4%;
+    height: auto;
+
+    .concept-text{
+        @include g.baseFont(1.6rem, normal, 400, #000);
+        line-height: 2.0;
+        //AdobeXDから見た目で微調整
+        letter-spacing: -0.1em;
+        font-family: 'Noto Sans JP', sans-serif;
+        margin-bottom: 60px;
+        @include g.mediaTB(){
+            margin-bottom: 30px;
+        }
+    }
+    @include g.mediaTB(){
+        max-width: 520px;
+    }
+}
+
+.contact-img-wrapper{
+    max-width: 52.7%;
+    @include g.mediaTB(){
+        max-width: 520px;
+        margin-bottom: 30px;
+    }
+}

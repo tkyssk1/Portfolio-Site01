@@ -1,18 +1,17 @@
 @charset "UTF-8";
-@use "variable" as v;
-@use "global" as g;
-@use "allcommon";
-@use "common";
-@use "header";
-@use "fv";
-@use "concept";
-@use "works";
-@use "service";
-@use "contact"; 
-@use "footer";
+// styles.scss
+// Foundation
+@use "foundation";
 
+// Layout
+@use "layout";
 
-/* ------------------------------- */
+// Component
+@use "component";
 
-/* responsiveは別ファイル
-/* ------------------------------- */
+// Project
+@use "project";
+
+// Utility
+@use "utility"; 
+

@@ -1,0 +1,60 @@
+@use "../global" as g;
+
+// dl,dt,ddで作成したパターン
+.info-def {
+    width: 72.7%;
+    margin-bottom: 40px;
+    @include g.mediaSP {
+        width: 100%;
+    }
+
+    .info-row {
+        display: flex;
+        border-bottom: 1px #ddd solid;
+        line-height: 56px;
+        .info-list {
+            width: 18%;
+            @include g.baseFont(1.6rem, normal, 800, #333);
+            @include g.mediaSP {
+                font-size: 1.4rem;
+                width: 43%;
+            }
+        }
+        .info-description {
+            width: 82%;
+            @include g.baseFont(1.6rem, normal, 400, #333);
+            @include g.mediaSP {
+                font-size: 1.4rem;
+                width: 57%;
+            }
+        }
+    }
+}
+.company-map {
+    width: 100%;
+    height: 360px;
+    @include g.mediaSP {
+        height: 470px;
+    }
+}
+
+///////////////////////////////////////////////////
+// tableタグで作成したパターン(info-defとの書き換え)
+.info-table {
+    width: 72.7%;
+    margin-bottom: 40px;
+    .info-row {
+        width: 100%;
+        border-bottom: 1px #ddd solid;
+        line-height: 56px;
+        .info-item-title {
+            width: 18%;
+            @include g.baseFont(1.6rem, normal, 800, #333);
+        }
+        .info-item {
+            width: 82%;
+            @include g.baseFont(1.6rem, normal, 400, #333);
+        }
+    }
+}
+///////////////////////////////////////////////////
